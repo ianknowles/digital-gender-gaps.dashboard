@@ -3,7 +3,7 @@
 # --- Site and Project
 site.title=Digital Gender Gaps
 site.desc=Measuring digital gender inequalities in real-time
-site.keywords=dashboard, scaffold, scala, playframework, twirl, scss, scalajs
+site.keywords=gender inequality, development indicators, internet access, data science, sociology, research, facebook data, global gender gap report
 project.name=Digital Gender Gaps Project
 project.year=2018
 project.copyright=Digital Gender Gaps Project
