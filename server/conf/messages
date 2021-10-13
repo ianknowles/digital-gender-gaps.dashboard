@@ -1,29 +1,29 @@
 # https://www.playframework.com/documentation/latest/ScalaI18N
 
 # --- Site and Project
-site.title=site.title
-site.desc=site.desc
+site.title=Digital Gender Gaps
+site.desc=Measuring digital gender inequalities in real-time
 site.keywords=dashboard, scaffold, scala, playframework, twirl, scss, scalajs
-project.name=project.name
-project.year=2021
-project.copyright=Ian Knowles
+project.name=Digital Gender Gaps Project
+project.year=2018
+project.copyright=Digital Gender Gaps Project
 
 # --- Index page
 index.title=Home
-index.jumbo.title=jumbo.title
-index.jumbo.desc=jumbo.desc
+index.jumbo.title=Using big data to measure global gender gaps in internet and mobile access
+index.jumbo.desc=Tracking progress on gender inequalities in internet and mobile access and use is more important than ever to ensure that women benefit from the digital revolution. Data on gender gaps in internet and mobile phone use and access are significantly lacking geographical coverage, comparability, and are slow to be updated. We show how big data can help close this gender data gap and measure progress towards this important development goal in real-time.
 
 # --- Pages
 team.title=Team
 team.desc=Meet the project members.
 
-dash.title=Time series
-dash.desc=View the data collection.
+dash.title=Latest indicators
+dash.desc=Check out the latest internet and mobile gender gap indicators.
 
 donut.title=Donut
 
 project.title=Project
-project.desc=See the background of the project, and an overview of the data sources.
+project.desc=See the background of the project, and an overview of how the data is collected and processed.
 
 privacy.title=Privacy Policy
 contact.title=Contact Us
