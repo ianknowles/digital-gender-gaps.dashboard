@@ -1,6 +1,11 @@
 @()(implicit messages: Messages)
 <div class="d-flex flex-column flex-lg-row flex-wrap justify-content-center align-content-center">
+	<div class="align-self-center">A collaboration between</div>
 	@for(acknowledgement <- Acknowledgements.primary) {
+		@components.navigation.acknowledgement(acknowledgement)
+	}
+	<div class="align-self-center">With support from</div>
+	@for(acknowledgement <- Acknowledgements.support) {
 		@components.navigation.acknowledgement(acknowledgement)
 	}
 </div>
