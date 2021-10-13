@@ -13,7 +13,7 @@ import com.typesafe.sbt.packager.SettingsHelper.makeDeploymentSettings
  * https://www.playframework.com/documentation/latest/Requirements
  **/
 
-val projectName: String = "graphing-app-scaffold"
+val projectName: String = "digital-gender-gaps.dashboard"
 val suffix = "-server"
 val projectNameMax = 32 - suffix.length
 val serverArtifactName = if (projectName.length > projectNameMax) {
@@ -23,14 +23,14 @@ val serverArtifactName = if (projectName.length > projectNameMax) {
 }
 ThisBuild / organization := "uk.co.imknowles"
 
-ThisBuild / startYear := Some(2021)
-ThisBuild / description := "Web Application scaffold for visualisation dashboards and dataset collections"
+ThisBuild / startYear := Some(2018)
+ThisBuild / description := "Web Application scaffold for DGG Data"
 
 val githubUser: String = "ianknowles"
 val githubRepo: String = projectName
 
 ThisBuild / scalaVersion := "2.13.6"
-ThisBuild / version      := "1.0.1-SNAPSHOT"
+ThisBuild / version      := "1.0.0-SNAPSHOT"
 ThisBuild / versionScheme := Some("early-semver")
 ThisBuild / scalacOptions ++= Seq(
 	"-feature",
