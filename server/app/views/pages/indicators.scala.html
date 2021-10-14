@@ -1,0 +1,40 @@
+@()(implicit webJarsUtil: org.webjars.play.WebJarsUtil, messages: Messages, request: Request[AnyContent])
+@main(messages("indicators.title")) {
+<article class="p-4">
+	<h1>Overview</h1>
+	<p>Our approach leverages online big data from the Facebook Marketing Application Programming Interface (<abbr title="Application Programming Interface">API</abbr>) in combination with different development indicators from sources such as the World Bank and the United Nations (<abbr title="United Nations">UN</abbr>) to estimate global digital gender gaps (<abbr title="Gender Gap">GG</abbr>) in internet and mobile phone use. The full details of the data and methods used to generate the estimates shown in the maps on this website are described in <em><a href="https://doi.org/10.1016/j.worlddev.2018.03.007">Using facebook ad data to track the global digital gender gap</a></em>.</p>
+	<hr />
+	<section id="scale">
+		<h2>Digital Gender Gap Indicators</h2>
+		<p>We provide estimates of two measures – 1) <strong>Internet Gender Gap</strong>, 2) <strong>Mobile Gender Gap</strong>. Both measures are female-to-male ratios of gender-specific internet penetration, and lie in the range of 0 to 1. Values of 1 or close to 1 show that the gender gap has closed. For example, a value of 0.75 could be interpreted as a 25% gap between male and female internet use, with 75 women online for roughly 100 men who are.</p>
+		<p>For each measure – Internet <abbr title="Gender Gap">GG</abbr> and Mobile Phone <abbr title="Gender Gap">GG</abbr> – we provide <strong>three estimates</strong>.</p>
+		<section id="internet">
+			<h3>Internet Gender Gaps</h3>
+			<p>The <dfn>Internet <abbr title="Gender Gap">GG</abbr> - <abbr title="International Telecommunication Union">ITU</abbr></dfn> shows the ratio of female-to-male internet use from International Telecommunication Union (<abbr title="International Telecommunication Union">ITU</abbr>) statistics. These are available for the fewest countries and are infrequently updated.</p>
+			<p>The <dfn>Internet <abbr title="Gender Gap">GG</abbr> – Online</dfn> shows the ratio of female-to-male internet use estimated using the Facebook Gender Gap Index (see below for more information) by country. These estimates are available for the largest number of countries and are available with daily frequency.</p>
+			<p>The <dfn>Internet <abbr title="Gender Gap">GG</abbr> – Combined</dfn> shows the ratio of female-to-male internet use estimated using the Facebook Gender Gap Index by country combined with other offline indicators on the country’s development status such as its Human Development Index. This model is our best-performing model in terms of its fit with <abbr title="International Telecommunication Union">ITU</abbr> statistics, and these estimates are available for more countries than <abbr title="International Telecommunication Union">ITU</abbr> statistics. Their geographical coverage is not as wide as that of the Online Model Prediction and the underlying information used to generate these predictions is only annually updated.</p>
+			<p>The <dfn>Internet <abbr title="Gender Gap">GG</abbr> – Offline</dfn> shows the ratio of female-to-male internet use estimated using only offline indicators on the country’s development status such as its Human Development Index. Estimates from these models have the worst fit with <abbr title="International Telecommunication Union">ITU</abbr> statistics on the internet <abbr title="Gender Gap">GG</abbr>, and the underlying data used to generate these are updated with an annual or longer frequency.</p>
+		</section>
+		<section id="mobile">
+			<h3>Mobile Gender Gaps</h3>
+			<p>The <dfn>Mobile <abbr title="Gender Gap">GG</abbr> – <abbr title="Global System for Mobile Communications Association">GSMA</abbr></dfn> shows the ratio of female-to-male internet use from published Global System for Mobile Communications Association (<abbr title="Global System for Mobile Communications Association">GSMA</abbr>) reports. These are available for the fewest countries and are infrequently updated.</p>
+			<p>The <dfn>Mobile <abbr title="Gender Gap">GG</abbr> – Online</dfn> shows the ratio of female-to-male mobile use estimated using the Facebook Gender Gap Index (see below for more information) by country. These estimates are available for the largest number of countries and are available with daily frequency, although their fit with <abbr title="Global System for Mobile Communications Association">GSMA</abbr> statistics is worse than the other two models.</p>
+			<p>The <dfn>Mobile <abbr title="Gender Gap">GG</abbr> – Combined</dfn> shows the ratio of female-to-male mobile use estimated using the Facebook Gender Gap Index by country combined with other indicators on the country’s development status such as its Human Development Index. Estimates from these models are closer to <abbr title="Global System for Mobile Communications Association">GSMA</abbr> statistics on the mobile <abbr title="Gender Gap">GG</abbr>, and available for more countries than <abbr title="Global System for Mobile Communications Association">GSMA</abbr> statistics, but not as many as those from the Online Model Prediction.</p>
+			<p>The <dfn>Mobile <abbr title="Gender Gap">GG</abbr> – Offline</dfn> shows the ratio of female-to-male mobile use estimated using only offline indicators on the country’s development status such as its Human Development Index. The underlying data used to generate these are updated with an annual or longer frequency.</p>
+		</section>
+	</section>
+	<hr />
+	<section>
+		<h2>Data Informing our Estimates</h2>
+		<section>
+			<h3>The Facebook Gender Gap Index</h3>
+			<p>We track the global aggregate numbers of female and male users of Facebook every day available through the marketing <abbr title="Application Programming Interface">API</abbr>. Using these aggregate numbers, we generate the “Facebook Gender Gap Index”, an indicator of the number of female-to-male Facebook users in a country. While the Facebook Gender Gap Index reflects gender gaps in who has Facebook accounts and not internet use per se, we have found the Facebook Gender Gap Index is highly correlated with statistics on internet (from the <abbr title="International Telecommunication Union">ITU</abbr>) and mobile phone gender gaps (from the <abbr title="Global System for Mobile Communications Association">GSMA</abbr>) collected via surveys, for the countries for which these data are available.</p>
+			<p>Looking at statistics of gender gaps in Facebook users can help us predict gender gaps in internet use, but as data on Facebook users are available for many more countries than statistics from the <abbr title="International Telecommunication Union">ITU</abbr>, we can expand geographical coverage of this indicator by using the online data.</p>
+		</section>
+		<section>
+			<h3>Offline Indicators</h3>
+			<p>Our dataset uses a number of country-level development indicators (e.g Human Development Index, Gross Domestic Product (<abbr title="Gross Domestic Product">GDP</abbr>) per capita) and global gender gap indicators in other domains (e.g literacy). For more information see our <a href="https://doi.org/10.1016/j.worlddev.2018.03.007">paper</a>.</p>
+		</section>
+	</section>
+</article>
+}{ }

@@ -46,6 +46,10 @@ class HomeController @Inject() (val controllerComponents: ControllerComponents, 
 		Ok(views.html.pages.donut("donut", "Donut", files.toList))
 	}
 
+	def indicators: Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
+		Ok(views.html.pages.indicators())
+	}
+
 	def project: Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
 		Ok(views.html.pages.project())
 	}

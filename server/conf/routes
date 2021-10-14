@@ -7,6 +7,7 @@ GET     /                           graphs.controllers.HomeController.index
 GET     /home                       graphs.controllers.HomeController.index
 GET     /dash                       graphs.controllers.HomeController.dash
 GET     /donut                      graphs.controllers.HomeController.donut
+GET     /indicators                 graphs.controllers.HomeController.indicators
 GET     /about                      graphs.controllers.HomeController.about
 GET     /project                    graphs.controllers.HomeController.project
 GET     /team                       graphs.controllers.HomeController.team
