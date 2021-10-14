@@ -88,6 +88,10 @@ lazy val server = (project in file("server"))
 			"-Dplay.evolutions.db.default.autoApply=true",
 			"-Dplay.http.secret.key=APPLICATION_SECRET"
 		),
+		// Create a map of versioned assets, replacing the empty versioned.js
+		DigestKeys.indexPath := Some("javascripts/versioned.js"),
+		// Assign the asset index to a global versioned var
+		DigestKeys.indexWriter ~= { writer => index => s"var versioned = ${writer(index)};" },
 
 		// publish to github packages
 		publishTo := Some(s"GitHub $githubUser Apache Maven Packages" at s"https://maven.pkg.github.com/$githubUser/$githubRepo"),
