@@ -31,6 +31,12 @@ class HomeController @Inject() (val controllerComponents: ControllerComponents, 
 		Ok(views.html.pages.dashboard("timeseries", "Dash", files.toList))
 	}
 
+	def report(year: Int, month: Int): Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
+		//TemporaryRedirect("https://s3.eu-west-3.amazonaws.com/www.digitalgendergaps.org/data/2020-11-05/mau_monthly_model_2_2020-11-05.csv")
+		TemporaryRedirect(f"https://s3.eu-west-3.amazonaws.com/www.digitalgendergaps.org/data/$year%4d-$month%02d/mau_monthly_model_2_$year%4d-$month%02d.csv")
+		//2021-01/mau_diffs_monthly_model_2_2021-01.csv.csv
+	}
+
 	def about: Action[AnyContent] = TODO
 
 	def album: Action[AnyContent] = Action { implicit request: Request[AnyContent] =>

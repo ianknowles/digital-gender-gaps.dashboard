@@ -5,6 +5,8 @@
 
 GET     /                           graphs.controllers.HomeController.index
 GET     /home                       graphs.controllers.HomeController.index
+GET     /monthly/csv                graphs.controllers.HomeController.report(year: Int, month: Int)
+GET     /monthly/csv/:year/:month   graphs.controllers.HomeController.report(year: Int, month: Int)
 GET     /dash                       graphs.controllers.HomeController.dash
 GET     /donut                      graphs.controllers.HomeController.donut
 GET     /indicators                 graphs.controllers.HomeController.indicators
