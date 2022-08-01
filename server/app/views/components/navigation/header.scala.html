@@ -1,8 +1,9 @@
 @()(implicit messages: Messages, request: Request[AnyContent])
 <header id="nav-header" class="navbar">
-	<a class="navbar-brand" href="/">
-		<h1>@messages("site.title")</h1>
-		<p class="text-truncate my-0">@messages("site.desc")</p>
+	<a class="navbar-brand d-flex d-row" href="/">
+		<img src="@routes.Assets.versioned("images/logos/gendernet_logo_plain.svg")" alt="" class="navbar-brand-logo"/>
+		<div><h1>@messages("site.title")</h1>
+		<p class="text-truncate my-0">@messages("site.desc")</p></div>
 	</a>
 	@components.navigation.menu_sitemap()
 </header>
