@@ -1,0 +1,42 @@
+@(elementID: String, reportTitle: String)(implicit messages: Messages)
+<div class="d-flex justify-content-between align-items-end flex-wrap pb-2 mb-3 border-bottom">
+	<div class="flex-column">
+		<div><h1 class="h2 my-0 svgtext">@reportTitle</h1></div>
+		<div id="@elementID-report-label"><h2 class="h3 my-0"></h2><span class="spinner-border"></span></div>
+	</div>
+	<div class="btn-toolbar mt-2 mb-0 mr-sm-2 flex-column flex-lg-row">
+		<div class="input-group m-1">
+			<div class="input-group-prepend">
+				<label for="@elementID-report-picker" class="input-group-text">
+					<span class="sr-only">Report picker</span>
+					@components.bootstrap_icon("calendar-month", "bi-16")
+				</label>
+			</div>
+			<select id="@elementID-report-picker" class="custom-select btn-outline-secondary h-100" data-style="btn-primary">
+				<option value="latest">Latest<span class="spinner-border spinner-border-sm"></span></option>
+				<option value="latest">2018-05</option>
+				<option value="latest">2018-06-05</option>
+			</select>
+		</div>
+		@* <!--@components.controls.time_series_picker("timeseries", List())--> *@
+		<div class="input-group m-1">
+			<div class="input-group-prepend">
+				<label for="@elementID-select-column" class="input-group-text">
+					<span class="sr-only">Model prediction picker for map</span>
+					@components.bootstrap_icon("table", "bi-16")
+				</label>
+			</div>
+			<select id="@elementID-select-column" class="custom-select btn-outline-secondary h-100" data-style="btn-primary">
+				<option value="Ground Truth Internet GG">Internet GG - ITU</option>
+				<option value="Internet online model prediction">Internet GG - Online</option>
+				<option value="Internet Online-Offline model prediction">Internet GG - Combined</option>
+				<option value="Internet Offline model prediction">Internet GG - Offline</option>
+				<option value="Mobile_GG">Mobile GG - GSMA</option>
+				<option value="Mobile Online model prediction">Mobile GG - Online</option>
+				<option value="Mobile Online-Offline model prediction">Mobile GG - Combined</option>
+				<option value="Mobile Offline model prediction">Mobile GG - Offline</option>
+			</select>
+		</div>
+		@components.controls.data_controls(elementID)
+	</div>
+</div>

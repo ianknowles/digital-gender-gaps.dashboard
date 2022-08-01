@@ -20,6 +20,26 @@ class HomeController @Inject() (val controllerComponents: ControllerComponents, 
 
 	def coming_soon: Action[AnyContent] = TODO
 
+	def dgg_data: Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
+		Ok(views.html.pages.dgg_report("map", "data", "raw", ""))
+	}
+
+	def daily(report: String): Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
+		val files: List[FileOption] = List()
+		val messages: Messages = request.messages
+		Ok(views.html.pages.dgg_report("map", messages("daily.title"), "models2", report))
+	}
+
+	def monthly(report: String): Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
+		val files: List[FileOption] = List()
+		val messages: Messages = request.messages
+		Ok(views.html.pages.dgg_report("map", messages("monthly.title"), "monthly_models", report))
+	}
+
+	def raw(report: String): Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
+		Ok(views.html.pages.dgg_report("map", "raw", "raw", report))
+	}
+
 	def dash: Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
 		//TODO should use the directory listing to filter for files present
 		Environment.simple().getFile("public/data").listFiles()
@@ -31,10 +51,14 @@ class HomeController @Inject() (val controllerComponents: ControllerComponents, 
 		Ok(views.html.pages.dashboard("timeseries", "Dash", files.toList))
 	}
 
-	def report(year: Int, month: Int): Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
+	def reportCSV(year: Int, month: Int): Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
 		//TemporaryRedirect("https://s3.eu-west-3.amazonaws.com/www.digitalgendergaps.org/data/2020-11-05/mau_monthly_model_2_2020-11-05.csv")
 		TemporaryRedirect(f"https://s3.eu-west-3.amazonaws.com/www.digitalgendergaps.org/data/$year%4d-$month%02d/mau_monthly_model_2_$year%4d-$month%02d.csv")
 		//2021-01/mau_diffs_monthly_model_2_2021-01.csv.csv
+	}
+
+	def report(report: String, index: String): Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
+		Ok(views.html.pages.dgg_report("map", s"$index - $report", index, report))
 	}
 
 	def about: Action[AnyContent] = TODO

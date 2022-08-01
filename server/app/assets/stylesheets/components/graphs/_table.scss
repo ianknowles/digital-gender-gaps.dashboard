@@ -50,7 +50,7 @@ only screen and (max-width: 1199.98px),
 	Label the data
 	*/
 	td:before {
-		content: attr(data-label);
+		content: attr(data-th);
 		font-weight: bold;
 		display: inline-block;
 	}
@@ -125,4 +125,20 @@ only screen and (max-width: 1199.98px),
 
 .indicator-sort-up {
 	display: none;
+}
+
+.ascending::before, .descending::before, .header:before {
+	right: 1em;
+	content: "\25b2";
+	float: right;
+}
+
+.ascending::after, .descending::after, .header:after {
+	right: 0.5em;
+	content: "\25bc";
+	float: right;
+}
+
+.header:before, .header:after, .ascending::after, .descending::before {
+	opacity: 0.3;
 }

@@ -1,0 +1,27 @@
+@(elementID: String)(implicit messages: Messages)
+<div id="@elementID-palette-pickers" class="row mt-2">
+	<div class="col-12 d-flex justify-content-between align-items-center flex-row">
+		<div>
+			<div class="input-group d-flex">
+				<input type="color" id="@elementID-color-min-input" class="align-self-stretch color-pick-size" />
+				<button type="button" id="@elementID-color-min-button" class="btn btn-outline-secondary color-pick-size border-right-2"></button>
+				<div class="input-group-append border-left-0">
+					<span class="input-group-text">
+						<a id="@elementID-color-min-link">Min</a>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="mr-sm-2">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">
+						<a id="@elementID-color-max-link">Max</a>
+					</span>
+				</div>
+				<input type="color" id="@elementID-color-max-input" class="color-pick-size color-pick-right" />
+				<button type="button" id="@elementID-color-max-button" class="btn btn-outline-secondary color-pick-size"></button>
+			</div>
+		</div>
+	</div>
+</div>

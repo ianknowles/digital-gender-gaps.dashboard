@@ -1,5 +1,6 @@
 @import "lib/bootstrap/scss/bootstrap";
 @import "components/shade";
+@import "components/controls/color_picker";
 @import "components/graphs/figure";
 @import "components/graphs/table";
 @import "components/navigation/acknowledgements";
@@ -52,6 +53,10 @@ main {
 
 .border-top { border-top: 1px solid #e5e5e5; }
 .border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+.background-color-sea {
+	background: $sea;
+}
 
 .active {
 	background-color: rgba(0, 0, 0, 0.03);

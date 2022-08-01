@@ -1,0 +1,13 @@
+@(elementID: String)(implicit messages: Messages)
+<figure class="position-relative map-contain">
+	@components.shade(elementID)
+	<div class="row">
+		<div class="col-12 col-lg-11 d-lg-flex flex-lg-column pr-lg-0">
+			<div id="@elementID-chart-area" class="border background-color-sea"></div>
+		</div>
+		@components.graphs.choroplethLegendV(elementID)
+	</div>
+	@components.graphs.choroplethLegendH(elementID)
+	@components.controls.palette_picker(elementID)
+	<figcaption class="sr-only">Prediction map</figcaption>
+</figure>
