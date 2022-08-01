@@ -23,7 +23,7 @@ main {
 		@include font-size($h1-font-size);
 	}
 
-	.navbar-brand {
+	a.navbar-brand {
 		//TODO forcing the width on this element breaks flex behaviours requiring arbitrary pixel sizes here. rework the flex settings
 		min-width: 480px !important;
 		width: 50% !important;
